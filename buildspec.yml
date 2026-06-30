@@ -60,5 +60,9 @@ artifacts:
   files:
     - 'package.json'
     - 'package-lock.json'
-    - 'dist/*/'
+    # - 'dist/*/'
+    - '*/'
     - 'node_modules/*/'
+  base-directory: build
+
+    # - 'node_modules/*/'
