@@ -1,3 +1,36 @@
+# version: 0.2
+
+# phases:
+#   install:
+#     runtime-versions:
+#       nodejs: 20
+#     commands:
+#       - echo Installing dependencies...
+#       - npm install
+
+#   pre_build:
+#     commands:
+#       - echo Running tests...
+#       # Uncomment if you have tests
+#       # - npm test
+
+#   build:
+#     commands:
+#       - echo Building application...
+#       - npm run build
+
+#   post_build:
+#     commands:
+#       - echo Build completed successfully.
+
+# artifacts:
+#   files:
+#     - '*/'
+#   base-directory: build
+
+
+# new code
+
 version: 0.2
 
 phases:
@@ -5,25 +38,21 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - echo Installing dependencies...
+      - echo "Installing dependencies..."
       - npm install
-
+  
   pre_build:
     commands:
-      - echo Running tests...
-      # Uncomment if you have tests
-      # - npm test
-
+      - echo "Running tests..."
+      - npm test
+  
   build:
     commands:
-      - echo Building application...
+      - echo "Building the application..."
       - npm run build
-
-  post_build:
-    commands:
-      - echo Build completed successfully.
 
 artifacts:
   files:
-    - '*/'
-  base-directory: build
+    - 'dist/**/*'
+    - 'node_modules/**/*'
+    - 'package.json'
